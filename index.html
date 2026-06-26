@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile's Huy</title>
+    <link rel="icon" type="image/x-icon" href=".png" />
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Portfolio của Cấn Duy Huy - FrontEnd Developer chuyên nghiệp với kỹ năng ReactJS và JS."
+    />
+    <meta
+      name="keywords"
+      content="Cấn Duy Huy, FrontEnd Developer, Portfolio, ReactJS, Web Developer"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body
+    class="bg-[var(--bg-dark)] text-[var(--text-main)] font-['Be_Vietnam_Pro'] selection:bg-blue-800/30 overflow-x-hidden"
+  >
+    <!-- Loading Screen -->
+    <div
+      id="loader"
+      class="fixed inset-0 z-[9999] bg-[var(--bg-dark)] flex items-center justify-center transition-opacity duration-700"
+    >
+      <div class="relative w-20 h-20">
+        <div
+          class="absolute inset-0 border-4 border-blue-800/20 rounded-full"
+        ></div>
+        <div
+          class="absolute inset-0 border-4 border-t-blue-800 rounded-full animate-spin"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Cursor Glow -->
+    <div
+      id="cursor-glow"
+      class="fixed w-[600px] h-[600px] rounded-full bg-blue-800/10 blur-[120px] pointer-events-none z-0 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 opacity-0 lg:opacity-100"
+    ></div>
+
+    <!-- Header / Navbar -->
+    <!-- <header
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6"
+    >
+      <nav class="container mx-auto px-6 flex items-center justify-between">
+        <a
+          href="#"
+          class="text-2xl font-bold font-['Be_Vietnam_Pro'] tracking-tighter group"
+        >
+          Cấn Duy Huy
+        </a>
+
+        <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <button
+          id="menu-toggle"
+          class="md:hidden p-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </nav>
+    </header> -->
+
+    <main class="relative z-10">
+      <!-- ==========================================
+ HERO
+=========================================== -->
+      <section id="home" class="min-h-screen flex items-center bg-white">
+        <div class="container mx-auto px-6 py-24">
+          <!-- LEFT -->
+          <div>
+            <p
+              class="uppercase tracking-[8px] text-blue-600 font-semibold mb-5"
+            >
+              Technical Project Manager
+            </p>
+
+            <h1
+              class="text-4xl lg:text-7xl font-black text-slate-900 leading-tight"
+            >
+              Can Duy Huy
+            </h1>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span
+                class="px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-semibold"
+              >
+                Development Manager
+              </span>
+
+              <span
+                class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 font-semibold"
+              >
+                Front-End Background
+              </span>
+            </div>
+
+            <p class="mt-10 text-lg leading-9 text-slate-600 max-w-2xl">
+              Technical Project Manager with more than
+              <strong>3 years of experience</strong>
+              in software development and product delivery.
+            </p>
+
+            <p class="mt-6 text-lg leading-9 text-slate-600 max-w-2xl">
+              Currently managing
+              <strong>4 software projects</strong>, coordinating
+              <strong>20+ engineers</strong>, collaborating with
+              <strong>3 Team Leads</strong>, and contributing to products
+              serving over
+              <strong>242,000 users.</strong>
+            </p>
+
+            <div class="flex flex-wrap gap-5 mt-12">
+              <a
+                href="#contact"
+                class="px-8 py-4 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 duration-300"
+              >
+                Contact Me
+              </a>
+            </div>
+          </div>
+
+          <!-- =====================================
+      Highlights
+      ====================================== -->
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-28">
+            <div
+              class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg duration-300"
+            >
+              <h2 class="text-4xl font-black text-blue-600">242K+</h2>
+
+              <p class="mt-4 text-slate-600">Users Served</p>
+            </div>
+
+            <div
+              class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg duration-300"
+            >
+              <h2 class="text-4xl font-black text-blue-600">20+</h2>
+
+              <p class="mt-4 text-slate-600">Team Members</p>
+            </div>
+
+            <div
+              class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg duration-300"
+            >
+              <h2 class="text-4xl font-black text-blue-600">4</h2>
+
+              <p class="mt-4 text-slate-600">Active Projects</p>
+            </div>
+
+            <div
+              class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg duration-300"
+            >
+              <h2 class="text-4xl font-black text-blue-600">3+</h2>
+
+              <p class="mt-4 text-slate-600">Years Experience</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==========================================
+PROFILE
+=========================================== -->
+
+      <section id="about" class="py-28 bg-slate-50">
+        <div class="container mx-auto px-6">
+          <div class="max-w-5xl mx-auto">
+            <div class="mb-14">
+              <p
+                class="uppercase tracking-[6px] text-blue-600 font-semibold mb-4"
+              >
+                About Me
+              </p>
+
+              <h2 class="text-4xl lg:text-4xl font-black text-slate-900">
+                Technical Project Manager
+                <span class="text-blue-600">&</span>
+                Engineering Leader
+              </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16">
+              <div>
+                <p class="text-lg leading-9 text-slate-600">
+                  Technical Project Manager with more than
+                  <strong>3 years of experience</strong>
+                  in software development and enterprise product delivery.
+                </p>
+
+                <p class="mt-8 text-lg leading-9 text-slate-600">
+                  Started as a Front-End Engineer specializing in Angular and
+                  modern web technologies before moving into project management
+                  and technical leadership.
+                </p>
+
+                <p class="mt-8 text-lg leading-9 text-slate-600">
+                  Currently managing
+                  <strong>4 enterprise software projects</strong>, coordinating
+                  around <strong>20 engineers</strong>, including Frontend,
+                  Backend, Fullstack Developers and Team Leads.
+                </p>
+
+                <p class="mt-8 text-lg leading-9 text-slate-600">
+                  Experienced in stakeholder communication, delivery planning,
+                  sprint management, resource coordination, risk management and
+                  cross-functional collaboration.
+                </p>
+
+                <p class="mt-8 text-lg leading-9 text-slate-600">
+                  Successfully contributed to
+                  <strong>MB Payment Speaker MiniApp</strong>, one of Vietnam's
+                  leading payment notification solutions with more than
+                  <strong>242,000 users.</strong>
+                </p>
+              </div>
+
+              <!-- Right -->
+
+              <div class="space-y-6">
+                <div class="bg-white rounded-2xl p-7 border border-slate-200">
+                  <h4 class="font-bold text-xl text-slate-900">
+                    Current Position
+                  </h4>
+
+                  <p class="mt-3 text-slate-600">Technical Project Manager</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-7 border border-slate-200">
+                  <h4 class="font-bold text-xl">Current Responsibility</h4>
+
+                  <p class="mt-3 text-slate-600">
+                    Managing 4 concurrent software projects.
+                  </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-7 border border-slate-200">
+                  <h4 class="font-bold text-xl">Team Size</h4>
+
+                  <p class="mt-3 text-slate-600">
+                    Approximately 20 members including Team Leads, Frontend,
+                    Backend, Fullstack Developers.
+                  </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-7 border border-slate-200">
+                  <h4 class="font-bold text-xl">Industries</h4>
+
+                  <p class="mt-3 text-slate-600">
+                    Banking • Healthcare • Merchant • MiniApp • Digital Platform
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="expertise" class="py-28">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <p class="uppercase tracking-[6px] text-blue-600 font-semibold">
+              Core Expertise
+            </p>
+
+            <h2 class="text-4xl font-black mt-4">
+              Technical & Management Skills
+            </h2>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-10">
+            <!-- Technical -->
+
+            <div class="bg-white rounded-3xl border p-10">
+              <h3 class="text-2xl font-bold mb-8">Technical Skills</h3>
+
+              <div class="flex flex-wrap gap-3">
+                <span class="skill">Angular (11-20)</span>
+                <span class="skill">ReactJS</span>
+                <span class="skill">TypeScript</span>
+                <span class="skill">JavaScript ES6+</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">MySQL</span>
+                <span class="skill">REST API</span>
+                <span class="skill">Angular Signals</span>
+                <span class="skill">Tailwind CSS</span>
+                <span class="skill">Bootstrap</span>
+                <span class="skill">Git</span>
+                <span class="skill">Jira</span>
+              </div>
+            </div>
+
+            <!-- Management -->
+
+            <div class="bg-white rounded-3xl border p-10">
+              <h3 class="text-2xl font-bold mb-8">Management Skills</h3>
+
+              <div class="flex flex-wrap gap-3">
+                <span class="skill">Project Management</span>
+
+                <span class="skill">Stakeholder Management</span>
+
+                <span class="skill">Team Leadership</span>
+
+                <span class="skill">Sprint Planning</span>
+
+                <span class="skill">Agile / Scrum</span>
+
+                <span class="skill">Resource Planning</span>
+
+                <span class="skill">Delivery Management</span>
+
+                <span class="skill">Risk Management</span>
+
+                <span class="skill">Mentoring</span>
+
+                <span class="skill">Technical Review</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+FEATURED PROJECTS
+=========================================== -->
+
+      <section id="projects" class="py-32 bg-slate-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-20">
+            <p class="uppercase tracking-[6px] text-blue-600 font-semibold">
+              Featured Projects
+            </p>
+
+            <h2 class="text-4xl font-black text-slate-900 mt-4">
+              Enterprise Software Delivery
+            </h2>
+
+            <p class="text-slate-500 mt-6 max-w-3xl mx-auto text-lg leading-8">
+              Over the past three years, I have contributed to multiple
+              enterprise software projects across Banking, Healthcare, Merchant
+              and Digital Platform domains.
+            </p>
+          </div>
+
+          <!-- MB SPEAKER -->
+
+          <div
+            class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden"
+          >
+            <div class="grid lg:grid-cols-5">
+              <div class="lg:col-span-3 p-12">
+                <div class="flex flex-wrap gap-3 mb-6">
+                  <span class="project-tag"> Banking </span>
+
+                  <span class="project-tag"> MiniApp </span>
+
+                  <span class="project-tag"> Angular </span>
+
+                  <span class="project-tag"> Project Management </span>
+                </div>
+
+                <h3 class="text-4xl font-black text-slate-900">
+                  MB Payment Speaker MiniApp
+                </h3>
+
+                <p class="text-blue-600 font-semibold mt-3">
+                  Technical Project Manager
+                </p>
+
+                <p class="mt-8 text-slate-600 leading-8">
+                  Led the delivery of one of Vietnam's leading payment
+                  notification MiniApps integrated with the MB Bank ecosystem,
+                  serving more than
+                  <strong>242,000 users.</strong>
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-10">
+                  <div>
+                    <h4 class="font-bold mb-3">Responsibilities</h4>
+
+                    <ul class="space-y-2 text-slate-600">
+                      <li>• Managed end-to-end project delivery</li>
+
+                      <li>• Coordinated Frontend, Backend, QA & BA teams</li>
+
+                      <li>• Planned sprint roadmap and releases</li>
+
+                      <li>• Worked directly with MB Bank stakeholders</li>
+
+                      <li>• Monitored quality, risks and delivery progress</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold mb-3">Technologies</h4>
+
+                    <ul class="space-y-2 text-slate-600">
+                      <li>Angular</li>
+
+                      <li>TypeScript</li>
+
+                      <li>Bootstrap</li>
+
+                      <li>REST API</li>
+
+                      <li>MiniApp Platform</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right -->
+
+              <div
+                class="lg:col-span-2 bg-slate-900 text-white p-12 flex flex-col justify-center"
+              >
+                <div>
+                  <p class="text-slate-400 uppercase tracking-[4px]">
+                    Project Scale
+                  </p>
+
+                  <h2 class="text-6xl font-black mt-3">242K+</h2>
+
+                  <p class="text-slate-300 mt-2">Active Users</p>
+                </div>
+
+                <div class="mt-10">
+                  <p class="text-slate-400 uppercase tracking-[4px]">Role</p>
+
+                  <p class="text-2xl font-bold mt-3">
+                    Technical Project Manager
+                  </p>
+                </div>
+
+                <div class="mt-10">
+                  <p class="text-slate-400 uppercase tracking-[4px]">Status</p>
+
+                  <p class="text-green-400 font-bold mt-3">Production</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- OTHER PROJECTS -->
+
+          <div class="grid lg:grid-cols-3 gap-8 mt-12">
+            <div class="project-card">
+              <h3 class="text-2xl font-bold">MIC360 Platform</h3>
+
+              <p class="text-blue-600 mt-2">Technical Lead / Project Manager</p>
+
+              <p class="mt-6 text-slate-600 leading-7">
+                Built the project foundation architecture and participated in
+                developing core modules using Angular, Nx Monorepo, Angular
+                Signals and Native Bridge SDK.
+              </p>
+            </div>
+
+            <div class="project-card">
+              <h3 class="text-2xl font-bold">VNDoctor</h3>
+
+              <p class="text-blue-600 mt-2">Project Manager</p>
+
+              <p class="mt-6 text-slate-600 leading-7">
+                Managed healthcare platform delivery, coordinated business
+                stakeholders and development teams, ensuring project quality and
+                release schedules.
+              </p>
+            </div>
+
+            <div class="project-card">
+              <h3 class="text-2xl font-bold">Enterprise Projects</h3>
+
+              <p class="text-blue-600 mt-2">Confidential (NDA)</p>
+
+              <p class="mt-6 text-slate-600 leading-7">
+                Managed multiple enterprise software projects in Banking,
+                Merchant and Digital Transformation domains under non-disclosure
+                agreements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+EDUCATION
+=========================================== -->
+
+      <!-- ==========================================
+EDUCATION
+=========================================== -->
+
+      <section id="education" class="py-32 bg-slate-50">
+        <div class="container mx-auto px-6">
+          <!-- Heading -->
+          <div class="text-center mb-20">
+            <p class="uppercase tracking-[6px] text-blue-600 font-semibold">
+              Education
+            </p>
+
+            <h2 class="text-5xl font-black text-slate-900 mt-4">
+              Education & Professional Development
+            </h2>
+
+            <p class="text-slate-500 mt-6 max-w-2xl mx-auto text-lg leading-8">
+              A strong technical foundation combined with continuous learning
+              has enabled me to grow from Front-End Developer into a Technical
+              Project Manager.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <!-- ================= Education ================= -->
+
+            <div
+              class="bg-white rounded-3xl border border-slate-200 p-10 hover:shadow-xl transition-all duration-300"
+            >
+              <div class="flex items-center gap-4 mb-8">
+                <div>
+                  <h3 class="text-2xl font-bold text-slate-900">
+                    Hanoi Open University
+                  </h3>
+
+                  <p class="text-blue-600 font-medium mt-1">
+                    Engineer’s Degree in Information Technology
+                  </p>
+                </div>
+              </div>
+
+              <div class="space-y-5">
+                <div class="flex justify-between">
+                  <span class="text-slate-500"> Duration </span>
+
+                  <span class="font-semibold"> 2019 – 2024 </span>
+                </div>
+
+                <div class="flex justify-between">
+                  <span class="text-slate-500"> Major </span>
+
+                  <span class="font-semibold"> Information Technology </span>
+                </div>
+
+                <div class="flex justify-between">
+                  <span class="text-slate-500"> Degree </span>
+
+                  <span class="font-semibold"> Engineer's Degree </span>
+                </div>
+              </div>
+
+              <hr class="my-8" />
+
+              <h4 class="text-lg font-bold mb-5">Additional Courses</h4>
+
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span class="font-medium"> F8 Online Learning </span>
+
+                  <span
+                    class="text-sm bg-blue-50 text-blue-700 px-3 py-1 rounded-full"
+                  >
+                    Front-End Development
+                  </span>
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <span class="font-medium"> T3H Academy </span>
+
+                  <span
+                    class="text-sm bg-blue-50 text-blue-700 px-3 py-1 rounded-full"
+                  >
+                    ReactJS
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= Professional Development ================= -->
+
+            <div
+              class="bg-white rounded-3xl border border-slate-200 p-10 hover:shadow-xl transition-all duration-300"
+            >
+              <div class="flex items-center gap-4 mb-8">
+                <div>
+                  <h3 class="text-2xl font-bold text-slate-900">
+                    Continuous Learning
+                  </h3>
+
+                  <p class="text-blue-600 font-medium mt-1">
+                    Technologies & Leadership
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="rounded-xl bg-slate-50 p-4 text-center font-medium">
+                  Angular
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-4 text-center font-medium">
+                  ReactJS
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-4 text-center font-medium">
+                  Nx Monorepo
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-4 text-center font-medium">
+                  Angular Signals
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-4 text-center font-medium">
+                  Node.js
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-4 text-center font-medium">
+                  REST API
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-4 text-center font-medium">
+                  Project Management
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-4 text-center font-medium">
+                  Technical Leadership
+                </div>
+              </div>
+
+              <div
+                class="mt-10 p-6 rounded-2xl bg-blue-50 border border-blue-100"
+              >
+                <h4 class="font-bold text-slate-900 mb-3">
+                  Learning Philosophy
+                </h4>
+
+                <p class="text-slate-600 leading-8">
+                  I continuously improve both technical and leadership skills to
+                  bridge the gap between engineering teams and business
+                  stakeholders, ensuring successful software delivery and
+                  long-term product growth.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ==========================================
+CONTACT
+=========================================== -->
+
+      <section id="contact" class="py-32">
+        <div class="container mx-auto px-6">
+          <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+              <p class="uppercase tracking-[6px] text-blue-600 font-semibold">
+                Let's Connect
+              </p>
+
+              <h2 class="text-4xl font-black text-slate-900 mt-4">
+                Open to New Opportunities
+              </h2>
+
+              <p
+                class="text-slate-500 text-lg mt-8 max-w-3xl mx-auto leading-8"
+              >
+                I'm always interested in discussing technical leadership,
+                project management, digital transformation, and enterprise
+                software projects.
+              </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+              <!-- Left -->
+
+              <div class="bg-white rounded-3xl border border-slate-200 p-10">
+                <h3 class="text-3xl font-bold mb-8">Contact Information</h3>
+
+                <div class="space-y-8">
+                  <div>
+                    <p class="text-sm uppercase tracking-widest text-slate-400">
+                      Email
+                    </p>
+
+                    <p class="text-xl font-semibold mt-2">
+                      huycd.work@gmail.com
+                    </p>
+                  </div>
+
+                  <div>
+                    <p class="text-sm uppercase tracking-widest text-slate-400">
+                      Phone
+                    </p>
+
+                    <p class="text-xl font-semibold mt-2">+84 941 289 611</p>
+                  </div>
+
+                  <div>
+                    <p class="text-sm uppercase tracking-widest text-slate-400">
+                      Location
+                    </p>
+
+                    <p class="text-xl font-semibold mt-2">Hanoi, Vietnam</p>
+                  </div>
+
+                  <div>
+                    <p class="text-sm uppercase tracking-widest text-slate-400">
+                      Current Role
+                    </p>
+
+                    <p class="text-xl font-semibold mt-2">
+                      Technical Project Manager | Development Manager
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right -->
+
+              <div class="bg-slate-900 rounded-3xl p-10 text-white">
+                <h3 class="text-3xl font-bold">Find Me Online</h3>
+
+                <p class="mt-5 text-slate-300 leading-8">
+                  Feel free to connect with me through the following platforms.
+                </p>
+
+                <div class="mt-10 space-y-5">
+                  <!-- <a
+                    href="#"
+                    class="flex items-center justify-between border border-slate-700 rounded-xl p-5 hover:border-blue-500 transition"
+                  >
+                    <span>LinkedIn</span>
+
+                    <span>→</span>
+                  </a> -->
+
+                  <a
+                    href="#"
+                    class="flex items-center justify-between border border-slate-700 rounded-xl p-5 hover:border-blue-500 transition"
+                  >
+                    <span>GitHub</span>
+
+                    <span>→</span>
+                  </a>
+
+                  <a
+                    href="https://www.facebook.com/huycan.dev79"
+                    class="flex items-center justify-between border border-slate-700 rounded-xl p-5 hover:border-blue-500 transition"
+                  >
+                    <span>Facebook</span>
+
+                    <span>→</span>
+                  </a>
+
+                  <a
+                    href="-Can-Duy-Huy-TopCV.vn-260626.144544.pdf"
+                    download
+                    class="flex items-center justify-between bg-blue-600 rounded-xl p-5 hover:bg-blue-700 transition"
+                  >
+                    <span class="font-semibold"> Download CV </span>
+
+                    <span> ↓ </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-white border-t border-blue-100">
+      <div class="container mx-auto px-6">
+        <div class="pt-8 border-t border-blue-100 text-center">
+          <p class="text-blue-300 text-sm">
+            © 2026 Can Duy Huy. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 w-12 h-12 bg-[var(--primary)] text-white rounded-full flex items-center justify-center shadow-lg shadow-blue-800/20 translate-y-24 opacity-0 transition-all duration-300 z-40 hover:scale-110"
+    >
+      <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
