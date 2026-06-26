@@ -1,4 +1,4 @@
-/* Custom Styles for Cấn Xuân Thành Portfolio */
+/* Custom Styles for Can Duy Huy Portfolio */
 @import "tailwindcss";
 
 @theme {
@@ -182,4 +182,42 @@ input:-webkit-autofill:focus {
 
 .project-tag{
   @apply px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-medium;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.counter {
+  transition: transform .5s ease;
+}
+
+.counter.animate {
+  animation: pop .5s ease;
+}
+
+@keyframes pop {
+
+  0%{
+      opacity:0;
+      transform:scale(.9);
+  }
+
+  60%{
+      transform:scale(1.08);
+  }
+
+  100%{
+      opacity:1;
+      transform:scale(1);
+  }
+
 }

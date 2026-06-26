@@ -1,6 +1,6 @@
 /**
- * Main JavaScript for Cấn Xuân Thành Portfolio
- * Author: Cấn Xuân Thành
+ * Main JavaScript for Can Duy Huy Portfolio
+ * Author: Can Duy Huy
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -336,3 +336,85 @@ document.addEventListener('DOMContentLoaded', () => {
   confirmNo.addEventListener('click', closeConfirm);
   confirmModal.querySelector('.absolute').addEventListener('click', closeConfirm);
 });
+function animateCounter(el){
+
+  el.classList.add("animate");
+
+  const target = Number(el.dataset.count);
+
+  const duration = 1400;
+
+  const start = performance.now();
+
+  function update(now){
+
+      const progress = Math.min((now-start)/duration,1);
+
+      const ease = 1-Math.pow(1-progress,3);
+
+      const value = Math.floor(target*ease);
+
+      if(target>=1000){
+
+          el.innerText=(value/1000).toFixed(0)+"K+";
+
+      }else{
+
+          el.innerText=value+(target<10?"+":"+");
+
+      }
+
+      if(progress<1){
+
+          requestAnimationFrame(update);
+
+      }else{
+
+          if(target===242000)
+              el.innerText="242K+";
+
+          if(target===20)
+              el.innerText="20+";
+
+          if(target===4)
+              el.innerText="4";
+
+          if(target===3)
+              el.innerText="3+";
+
+      }
+
+  }
+
+  requestAnimationFrame(update);
+
+}
+const counters = document.querySelectorAll(".counter");
+
+let played = false;
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (!entry.isIntersecting || played) return;
+
+        played = true;
+
+        counters.forEach((counter, index) => {
+
+            setTimeout(() => {
+
+                animateCounter(counter);
+
+            }, index * 180);
+
+        });
+
+    });
+
+}, {
+    threshold: .4
+});
+
+observer.observe(document.querySelector("#stats"));

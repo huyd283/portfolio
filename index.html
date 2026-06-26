@@ -3,78 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>Can Duy Huy | Technical Project Manager</title>
-    
+
     <link rel="icon" type="image/png" href="/favicon.png" />
-    
+
     <!-- Primary Meta Tags -->
-    <meta
-      name="title"
-      content="Can Duy Huy | Technical Project Manager"
-    />
-    
+    <meta name="title" content="Can Duy Huy | Technical Project Manager" />
+
     <meta
       name="description"
       content="Technical Project Manager with 3+ years of experience in software development, enterprise project delivery, and engineering team leadership. Managing 4 projects, coordinating 20+ engineers, and contributing to products serving over 242,000 users."
     />
-    
+
     <meta
       name="keywords"
       content="Can Duy Huy, Technical Project Manager, Development Manager, Engineering Manager, Angular, TypeScript, Nx, Project Management, Software Development, Portfolio"
     />
-    
+
     <meta name="author" content="Can Duy Huy" />
-    
+
     <meta name="robots" content="index, follow" />
-    
+
     <meta name="theme-color" content="#2563eb" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    
+
     <meta
       property="og:title"
       content="Can Duy Huy | Technical Project Manager"
     />
-    
+
     <meta
       property="og:description"
       content="Technical Project Manager with experience leading enterprise software projects and engineering teams."
     />
-    
-    <meta
-      property="og:image"
-      content="/cover.png"
-    />
-    
-    <meta
-      property="og:url"
-      content="https://canduyhuy.vercel.app"
-    />
-    
+
+    <meta property="og:image" content="/cover.png" />
+
+    <meta property="og:url" content="https://canduyhuy.vercel.app" />
+
     <meta property="og:site_name" content="Can Duy Huy Portfolio" />
-    
+
     <!-- Twitter -->
-    <meta
-      name="twitter:card"
-      content="summary_large_image"
-    />
-    
+    <meta name="twitter:card" content="summary_large_image" />
+
     <meta
       name="twitter:title"
       content="Can Duy Huy | Technical Project Manager"
     />
-    
+
     <meta
       name="twitter:description"
       content="Technical Project Manager with 3+ years of experience leading enterprise software projects."
     />
-    
-    <meta
-      name="twitter:image"
-      content="/cover.png"
-    />
+
+    <meta name="twitter:image" content="/cover.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -108,46 +93,12 @@
       </div>
     </div>
 
-    <!-- Cursor Glow -->
     <div
       id="cursor-glow"
       class="fixed w-[600px] h-[600px] rounded-full bg-blue-800/10 blur-[120px] pointer-events-none z-0 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 opacity-0 lg:opacity-100"
     ></div>
 
-    <!-- Header / Navbar -->
-    <!-- <header
-      id="navbar"
-      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6"
-    >
-      <nav class="container mx-auto px-6 flex items-center justify-between">
-        <a
-          href="#"
-          class="text-2xl font-bold font-['Be_Vietnam_Pro'] tracking-tighter group"
-        >
-          Cấn Duy Huy
-        </a>
-
-        <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-
-        <button
-          id="menu-toggle"
-          class="md:hidden p-2 text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors"
-        >
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
-      </nav>
-    </header> -->
-
     <main class="relative z-10">
-      <!-- ==========================================
- HERO
-=========================================== -->
       <section id="home" class="min-h-screen flex items-center bg-white">
         <div class="container mx-auto px-6 py-24">
           <!-- LEFT -->
@@ -211,8 +162,7 @@
             <div
               class="border border-slate-200 rounded-2xl p-8 hover:shadow-lg duration-300"
             >
-              <h2 class="text-4xl font-black text-blue-600">242K+</h2>
-
+              <h3 class="counter text-4xl font-black text-blue-600">242K+</h3>
               <p class="mt-4 text-slate-600">Users Served</p>
             </div>
 
@@ -407,7 +357,7 @@ PROFILE
 FEATURED PROJECTS
 =========================================== -->
 
-      <section id="projects" class="py-32 bg-slate-50">
+      <section id="stats" class="py-32 bg-slate-50">
         <div class="container mx-auto px-6">
           <div class="text-center mb-20">
             <p class="uppercase tracking-[6px] text-blue-600 font-semibold">
@@ -502,7 +452,13 @@ FEATURED PROJECTS
                     Project Scale
                   </p>
 
-                  <h2 class="text-6xl font-black mt-3">242K+</h2>
+                  <h2
+                    id="project-scale"
+                    class="text-6xl font-black mt-3 counter"
+                    data-count="242000"
+                  >
+                    0
+                  </h2>
 
                   <p class="text-slate-300 mt-2">Active Users</p>
                 </div>
