@@ -35,24 +35,34 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     // Sticky Navbar background
     if (window.scrollY > 50) {
-      navbar.classList.add('bg-[#f8fafc]/80', 'backdrop-blur-xl', 'py-4', 'shadow-xl');
-      navbar.classList.remove('py-6');
+      navbar?.classList.add(
+        'bg-[#f8fafc]/80',
+        'backdrop-blur-xl',
+        'py-4',
+        'shadow-xl'
+      );
+      navbar?.classList.remove('py-6');
     } else {
-      navbar.classList.remove('bg-[#f8fafc]/80', 'backdrop-blur-xl', 'py-4', 'shadow-xl');
-      navbar.classList.add('py-6');
+      navbar?.classList.remove(
+        'bg-[#f8fafc]/80',
+        'backdrop-blur-xl',
+        'py-4',
+        'shadow-xl'
+      );
+      navbar?.classList.add('py-6');
     }
 
     // Active Link Highlight
     let current = '';
-    sections.forEach(section => {
+    sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
-      if (window.scrollY >= (sectionTop - 200)) {
+      if (window.scrollY >= sectionTop - 200) {
         current = section.getAttribute('id');
       }
     });
 
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
       link.classList.remove('active');
       if (link.getAttribute('href').includes(current)) {
         link.classList.add('active');
@@ -90,63 +100,68 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'auto';
   };
 
-  menuToggle.addEventListener('click', openMenu);
-  menuClose.addEventListener('click', closeMenu);
-  menuOverlay.addEventListener('click', closeMenu);
-  mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+  menuToggle?.addEventListener('click', openMenu);
+  menuClose?.addEventListener('click', closeMenu);
+  menuOverlay?.addEventListener('click', closeMenu);
+  mobileLinks?.forEach((link) => link.addEventListener('click', closeMenu));
 
   // 6. Scroll Reveal Animation (Intersection Observer)
-  const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active-reveal');
-        
-        // Trigger skill progress bars
-        const skillBars = entry.target.querySelectorAll('.skill-progress');
-        skillBars.forEach(bar => {
-          bar.style.width = bar.getAttribute('data-width');
-        });
+  const revealElements = document.querySelectorAll(
+    '.reveal-up, .reveal-left, .reveal-right'
+  );
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active-reveal');
 
-        // Trigger counters
-        const counters = entry.target.querySelectorAll('.counter');
-        counters.forEach(counter => {
-          const target = +counter.getAttribute('data-target');
-          const count = +counter.innerText;
-          const increment = target / 100;
-          
-          if (count < target) {
-            const updateCount = () => {
-              const currentCount = +counter.innerText;
-              if (currentCount < target) {
-                counter.innerText = Math.ceil(currentCount + increment);
-                setTimeout(updateCount, 20);
-              } else {
-                counter.innerText = target;
-              }
-            };
-            updateCount();
-          }
-        });
-      }
-    });
-  }, { threshold: 0.15 });
+          // Trigger skill progress bars
+          const skillBars = entry.target.querySelectorAll('.skill-progress');
+          skillBars.forEach((bar) => {
+            bar.style.width = bar.getAttribute('data-width');
+          });
 
-  revealElements.forEach(el => revealObserver.observe(el));
+          // Trigger counters
+          const counters = entry.target.querySelectorAll('.counter');
+          counters.forEach((counter) => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / 100;
+
+            if (count < target) {
+              const updateCount = () => {
+                const currentCount = +counter.innerText;
+                if (currentCount < target) {
+                  counter.innerText = Math.ceil(currentCount + increment);
+                  setTimeout(updateCount, 20);
+                } else {
+                  counter.innerText = target;
+                }
+              };
+              updateCount();
+            }
+          });
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  revealElements.forEach((el) => revealObserver.observe(el));
 
   // 7. Project Filtering
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
-  filterBtns.forEach(btn => {
+  filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       // Update active button
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
 
       const filter = btn.getAttribute('data-filter');
 
-      projectCards.forEach(card => {
+      projectCards.forEach((card) => {
         if (filter === 'all' || card.getAttribute('data-category') === filter) {
           card.classList.remove('hide');
           setTimeout(() => {
@@ -174,31 +189,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCategory = document.getElementById('modal-category');
 
   const projectData = {
-    '1': {
+    1: {
       title: 'E-commerce Backend API',
       category: 'Web Development',
       desc: 'Hệ thống API hoàn chỉnh cho sàn thương mại điện tử với Node.js, Express và MongoDB. Hỗ trợ xác thực JWT, thanh toán Stripe và quản lý kho hàng.',
-      img: 'https://picsum.photos/seed/p1/800/600'
+      img: 'https://picsum.photos/seed/p1/800/600',
     },
-    '2': {
+    2: {
       title: 'Real-time Task Manager',
       category: 'Application',
       desc: 'Ứng dụng quản lý công việc thời gian thực sử dụng Socket.io và React. Cho phép nhiều người dùng cộng tác trên cùng một bảng công việc.',
-      img: 'https://picsum.photos/seed/p2/800/600'
+      img: 'https://picsum.photos/seed/p2/800/600',
     },
-    '3': {
+    3: {
       title: 'Modern Portfolio Website',
       category: 'Personal',
       desc: 'Website giới thiệu bản thân với thiết kế hiện đại, tối ưu SEO và tốc độ tải trang. Sử dụng Vanilla JS và Tailwind CSS cho hiệu suất tốt nhất.',
-      img: 'https://picsum.photos/seed/p3/800/600'
-    }
+      img: 'https://picsum.photos/seed/p3/800/600',
+    },
   };
 
-  modalTriggers.forEach(trigger => {
+  modalTriggers.forEach((trigger) => {
     trigger.addEventListener('click', () => {
       const id = trigger.getAttribute('data-project');
       const data = projectData[id];
-      
+
       modalImg.src = data.img;
       modalTitle.innerText = data.title;
       modalDesc.innerText = data.desc;
@@ -216,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'auto';
   };
 
-  modalCloseBtns.forEach(btn => btn.addEventListener('click', closeModal));
+  modalCloseBtns.forEach((btn) => btn.addEventListener('click', closeModal));
 
   // 9. Form Validation & Toast
   const contactForm = document.getElementById('contact-form');
@@ -228,11 +243,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = contactForm.email.value.trim();
     const message = contactForm.message.value.trim();
     const emailError = document.getElementById('email-error');
-    
+
     // Email regex pattern
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isEmailValid = emailPattern.test(email);
-    
+
     // Show/hide error message and update border
     if (email && !isEmailValid) {
       emailError.classList.remove('hidden');
@@ -243,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
       contactForm.email.classList.remove('border-red-500');
       contactForm.email.classList.add('border-blue-100');
     }
-    
+
     if (name && isEmailValid && message) {
       submitBtn.disabled = false;
     } else {
@@ -251,11 +266,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  contactForm.addEventListener('input', checkFormValidity);
+  contactForm?.addEventListener('input', checkFormValidity);
 
-  contactForm.addEventListener('submit', (e) => {
+  contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     // Simple validation
     const name = contactForm.name.value;
     const email = contactForm.email.value;
@@ -268,13 +283,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fake Submit
     const originalText = submitBtn.innerHTML;
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Sending...';
+    submitBtn.innerHTML =
+      '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Sending...';
     if (window.lucide) window.lucide.createIcons();
 
     setTimeout(() => {
       // Show Toast
       toast.classList.remove('translate-y-24', 'opacity-0');
-      
+
       // Reset Form
       contactForm.reset();
       checkFormValidity(); // Re-disable button after reset
@@ -309,36 +325,9 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmModal.querySelector('.relative').classList.remove('scale-90');
     document.body.style.overflow = 'hidden';
   };
-
-  const closeConfirm = () => {
-    confirmModal.classList.add('opacity-0', 'pointer-events-none');
-    confirmModal.querySelector('.relative').classList.add('scale-90');
-    document.body.style.overflow = 'auto';
-  };
-
-  document.getElementById('email-trigger').addEventListener('click', () => {
-    showConfirm('Gửi Email', 'Bạn có muốn gửi tin nhắn tới tôi?', 'Gửi', () => {
-      window.location.href = 'mailto:thanhdiino@gmail.com';
-    });
-  });
-
-  document.getElementById('phone-trigger').addEventListener('click', () => {
-    showConfirm('Gọi điện', 'Bạn có muốn gọi cho tôi?', 'Có', () => {
-      window.location.href = 'tel:0366031000';
-    });
-  });
-
-  confirmYes.addEventListener('click', () => {
-    if (currentAction) currentAction();
-    closeConfirm();
-  });
-
-  confirmNo.addEventListener('click', closeConfirm);
-  confirmModal.querySelector('.absolute').addEventListener('click', closeConfirm);
 });
-function animateCounter(el){
-
-  el.classList.add("animate");
+function animateCounter(el) {
+  el.classList.add('animate');
 
   const target = Number(el.dataset.count);
 
@@ -346,75 +335,55 @@ function animateCounter(el){
 
   const start = performance.now();
 
-  function update(now){
+  function update(now) {
+    const progress = Math.min((now - start) / duration, 1);
 
-      const progress = Math.min((now-start)/duration,1);
+    const ease = 1 - Math.pow(1 - progress, 3);
 
-      const ease = 1-Math.pow(1-progress,3);
+    const value = Math.floor(target * ease);
 
-      const value = Math.floor(target*ease);
+    if (target >= 1000) {
+      el.innerText = (value / 1000).toFixed(0) + 'K+';
+    } else {
+      el.innerText = value + (target < 10 ? '+' : '+');
+    }
 
-      if(target>=1000){
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    } else {
+      if (target === 242000) el.innerText = '242K+';
 
-          el.innerText=(value/1000).toFixed(0)+"K+";
+      if (target === 20) el.innerText = '20+';
 
-      }else{
+      if (target === 4) el.innerText = '4';
 
-          el.innerText=value+(target<10?"+":"+");
-
-      }
-
-      if(progress<1){
-
-          requestAnimationFrame(update);
-
-      }else{
-
-          if(target===242000)
-              el.innerText="242K+";
-
-          if(target===20)
-              el.innerText="20+";
-
-          if(target===4)
-              el.innerText="4";
-
-          if(target===3)
-              el.innerText="3+";
-
-      }
-
+      if (target === 3) el.innerText = '3+';
+    }
   }
 
   requestAnimationFrame(update);
-
 }
-const counters = document.querySelectorAll(".counter");
+const counters = document.querySelectorAll('.counter');
 
 let played = false;
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting || played) return;
 
-    entries.forEach(entry => {
+      played = true;
 
-        if (!entry.isIntersecting || played) return;
-
-        played = true;
-
-        counters.forEach((counter, index) => {
-
-            setTimeout(() => {
-
-                animateCounter(counter);
-
-            }, index * 180);
-
-        });
-
+      counters.forEach((counter, index) => {
+        setTimeout(() => {
+          animateCounter(counter);
+        }, index * 180);
+      });
     });
+  },
+  {
+    threshold: 0.4,
+  }
+);
 
-}, {
-    threshold: .4
-});
-
-observer.observe(document.querySelector("#stats"));
+observer.observe(document.querySelector('#stats'));
